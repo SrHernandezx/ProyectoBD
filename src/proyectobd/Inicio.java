@@ -32,10 +32,20 @@ public class Inicio extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(105, 180, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/administradores.png"))); // NOI18N
         jButton1.setToolTipText("Solicitar Certificado.");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(105, 180, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Estudiante.png"))); // NOI18N
         jButton2.setToolTipText("Administradores.");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/TECNM.png"))); // NOI18N
 
@@ -107,6 +117,18 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        IniSesEstu iniestu = new IniSesEstu();
+        iniestu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        IniSesMaes inimaes = new IniSesMaes();
+        inimaes.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     
     public static void main(String args[]) {
