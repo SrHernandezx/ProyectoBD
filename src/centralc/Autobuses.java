@@ -48,7 +48,7 @@ public class Autobuses extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Número de asientos", "Número de unidad", "Fecha de operación", "Año de modelo", "Marca", "Opción de baño"
+                "ID", "Número de asientos", "Número de unidad", "Fecha de operación", "Año de modelo", "Marca", "Opción de baño"
             }
         ));
         jTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
