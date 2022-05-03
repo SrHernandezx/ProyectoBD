@@ -1,5 +1,5 @@
 package centralc;
-
+//
 
 public class Autobuses extends javax.swing.JFrame {
 
