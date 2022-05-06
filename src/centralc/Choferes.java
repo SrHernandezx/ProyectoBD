@@ -48,7 +48,7 @@ public class Choferes extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Nombres", "Apellido paterno", "Apellido materno", "Género", "Fecha de nacimiento", "Calle", "Colonia", "Número", "C.P", "Ciudad", "Estado"
+                "ID", "Nombres", "Apellido paterno", "Apellido materno", "Género", "Fecha de nacimiento", "Calle", "Colonia", "Número", "C.P", "Ciudad", "Estado"
             }
         ));
         jTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
