@@ -46,7 +46,7 @@
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Rutas">
+            <TitledBorder title="Ruta">
               <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder roundedCorners="true" thickness="3"/>
               </Border>
@@ -126,8 +126,8 @@
                     <Column editable="true" title="ID" type="java.lang.Object"/>
                     <Column editable="true" title="Municipio de salida" type="java.lang.Object"/>
                     <Column editable="true" title="Estado de salida" type="java.lang.Object"/>
-                    <Column editable="true" title="Municipio de entrada" type="java.lang.Object"/>
-                    <Column editable="true" title="Estado de entrada" type="java.lang.Object"/>
+                    <Column editable="true" title="Municipio de llegada" type="java.lang.Object"/>
+                    <Column editable="true" title="Estado de llegada" type="java.lang.Object"/>
                     <Column editable="true" title="Datos de salida" type="java.lang.Object"/>
                   </Table>
                 </Property>
