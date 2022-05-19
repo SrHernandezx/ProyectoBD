@@ -32,6 +32,7 @@ public class Inicio extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(105, 180, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/administradores.png"))); // NOI18N
         jButton1.setToolTipText("Solicitar Certificado.");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -41,6 +42,7 @@ public class Inicio extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(105, 180, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Estudiante.png"))); // NOI18N
         jButton2.setToolTipText("Administradores.");
+        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
