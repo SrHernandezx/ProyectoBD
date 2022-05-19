@@ -37,12 +37,13 @@ public class PanelAdmins extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(105, 180, 255));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Informacion a Consultar");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Estudiante.png"))); // NOI18N
         jButton1.setToolTipText("Estudiantes");
-        jButton1.setMinimumSize(new java.awt.Dimension(78, 78));
         jButton1.setPreferredSize(new java.awt.Dimension(75, 78));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,7 +53,6 @@ public class PanelAdmins extends javax.swing.JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/administradores.png"))); // NOI18N
         jButton2.setToolTipText("Maestros");
-        jButton2.setPreferredSize(new java.awt.Dimension(78, 78));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -89,7 +89,7 @@ public class PanelAdmins extends javax.swing.JFrame {
                         .addGap(140, 140, 140)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton2)
                         .addGap(41, 41, 41)
                         .addComponent(jButton3))
                     .addComponent(jButton4))
