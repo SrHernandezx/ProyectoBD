@@ -1,4 +1,7 @@
-package proyectobd;
+package gui.inicio;
+
+import gui.estudiantes.IniSesEstu;
+import gui.maestros.IniSesMaes;
 
 
 public class Inicio extends javax.swing.JFrame {

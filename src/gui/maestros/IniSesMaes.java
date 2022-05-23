@@ -1,6 +1,7 @@
-package proyectobd;
+package gui.maestros;
 
 
+import gui.inicio.Inicio;
 import java.awt.Color;
 
 

@@ -1,5 +1,6 @@
-package proyectobd;
+package gui.estudiantes;
 
+import gui.inicio.Inicio;
 import java.awt.Color;
 
 

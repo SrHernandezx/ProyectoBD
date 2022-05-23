@@ -1,4 +1,4 @@
-package proyectobd;
+package gui.cursos;
 
 /**
  *
