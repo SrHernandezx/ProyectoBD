@@ -6,6 +6,7 @@ import gui.admins.IniSesAdmins;
 
 public class Inicio extends javax.swing.JFrame {
 
+    private static Inicio instancia = null;
 
     public Inicio() {
         initComponents();
@@ -14,7 +15,17 @@ public class Inicio extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);          
     }
 
-    
+    public static Inicio getInstancia() {
+
+        synchronized (Inicio.class) {
+
+            if (instancia == null) {
+
+                instancia = new Inicio();
+            }
+        }
+        return instancia;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

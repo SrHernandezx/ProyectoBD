@@ -1,11 +1,15 @@
 package gui.estudiantes;
 
+import gui.cursos.Curso;
 import gui.inicio.Inicio;
 import java.awt.Color;
+import javax.swing.JOptionPane;
+import proyectobd.ConsultasSQL;
 
 
 public class IniSesEstu extends javax.swing.JFrame {
 
+    private static int intentos = 0;
    
     public IniSesEstu() {
         initComponents();
@@ -14,7 +18,72 @@ public class IniSesEstu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);    
         
     }
+    
+    private void borrarFormulario() {
+        
+        jTextFieldNumeroControl.setText("");
+        jPasswordFieldContraseña.setText("");
+        jTextFieldNumeroControl.requestFocus();
+    }
+    
+    
+    private void ingresar() {
+        
+        String numeroControl = jTextFieldNumeroControl.getText();
+        String NIP = String.valueOf(jPasswordFieldContraseña.getPassword());
+        String info[] = ConsultasSQL.logearseAlumnos(numeroControl);
+        
+        if (info != null){
+        
+            if (info[1].equals(numeroControl)) {
+            
+            if (info[2].equals(NIP)) {
+                
+                JOptionPane.showMessageDialog(null, "Sistema: Bienvenido " + numeroControl, "ITA: Login", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+                Curso curso = Curso.getInstancia();
+                curso.setVisible(true);
 
+            } else {
+                
+                intentos++;
+                
+                if (intentos == 3) {
+                    
+                    JOptionPane.showMessageDialog(null, "Número máximo de intentos excedido", "ITA: Login", JOptionPane.INFORMATION_MESSAGE);
+                    System.exit(0);
+
+                }
+                JOptionPane.showMessageDialog(null, "Numero de control o NIP incorrecto", "ITA: Login", JOptionPane.ERROR_MESSAGE);
+                borrarFormulario();
+            }
+
+        }
+        else {
+            intentos++;
+            
+            if (intentos == 3) {
+                JOptionPane.showMessageDialog(null, "Número máximo de intentos excedido", "ITA: Login", JOptionPane.INFORMATION_MESSAGE);
+                System.exit(0);
+            }
+            JOptionPane.showMessageDialog(null, "Alumno No escontrado", "AgendITA: Login", JOptionPane.ERROR_MESSAGE);
+            borrarFormulario();   
+            }    
+            
+            } else {
+
+                intentos++;
+                
+                if (intentos == 3) {
+                    JOptionPane.showMessageDialog(null, "Número máximo de intentos excedido", "ITA: Login", JOptionPane.INFORMATION_MESSAGE);
+                    System.exit(0);
+
+                }
+                JOptionPane.showMessageDialog(null, "Alumno No encontrado", "ITA: Login", JOptionPane.ERROR_MESSAGE);
+                borrarFormulario();
+            }
+        }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -22,12 +91,12 @@ public class IniSesEstu extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldNumeroControl = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPasswordFieldContraseña = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(105, 180, 255));
 
@@ -40,19 +109,19 @@ public class IniSesEstu extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(105, 180, 255));
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Número de Control:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTextFieldNumeroControl.setBackground(new java.awt.Color(105, 180, 255));
+        jTextFieldNumeroControl.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Número de Control:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        jTextFieldNumeroControl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jTextField1MouseEntered(evt);
+                jTextFieldNumeroControlMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jTextField1MouseExited(evt);
+                jTextFieldNumeroControlMouseExited(evt);
             }
         });
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNumeroControl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextFieldNumeroControlActionPerformed(evt);
             }
         });
 
@@ -69,15 +138,15 @@ public class IniSesEstu extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField1.setBackground(new java.awt.Color(105, 180, 255));
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Contraseña: ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        jPasswordField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPasswordFieldContraseña.setBackground(new java.awt.Color(105, 180, 255));
+        jPasswordFieldContraseña.setText("jPasswordField1");
+        jPasswordFieldContraseña.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Contraseña: ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        jPasswordFieldContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPasswordField1MouseEntered(evt);
+                jPasswordFieldContraseñaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPasswordField1MouseExited(evt);
+                jPasswordFieldContraseñaMouseExited(evt);
             }
         });
 
@@ -94,10 +163,10 @@ public class IniSesEstu extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextFieldNumeroControl, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(64, 64, 64)
                                 .addComponent(jButton1)))))
@@ -115,9 +184,9 @@ public class IniSesEstu extends javax.swing.JFrame {
                         .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldNumeroControl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPasswordFieldContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1)
                         .addGap(57, 57, 57))))
@@ -140,12 +209,12 @@ public class IniSesEstu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        ingresar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextFieldNumeroControlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumeroControlActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextFieldNumeroControlActionPerformed
                                          
            
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -155,21 +224,21 @@ public class IniSesEstu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTextField1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseEntered
-        jTextField1.setBackground(Color.LIGHT_GRAY);
-    }//GEN-LAST:event_jTextField1MouseEntered
+    private void jTextFieldNumeroControlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldNumeroControlMouseEntered
+        jTextFieldNumeroControl.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_jTextFieldNumeroControlMouseEntered
 
-    private void jTextField1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseExited
-        jTextField1.setBackground(Color.WHITE);
-    }//GEN-LAST:event_jTextField1MouseExited
+    private void jTextFieldNumeroControlMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldNumeroControlMouseExited
+        jTextFieldNumeroControl.setBackground(Color.WHITE);
+    }//GEN-LAST:event_jTextFieldNumeroControlMouseExited
 
-    private void jPasswordField1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MouseEntered
-        jPasswordField1.setBackground(Color.LIGHT_GRAY);
-    }//GEN-LAST:event_jPasswordField1MouseEntered
+    private void jPasswordFieldContraseñaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordFieldContraseñaMouseEntered
+        jPasswordFieldContraseña.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_jPasswordFieldContraseñaMouseEntered
 
-    private void jPasswordField1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MouseExited
-        jPasswordField1.setBackground(Color.WHITE);
-    }//GEN-LAST:event_jPasswordField1MouseExited
+    private void jPasswordFieldContraseñaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordFieldContraseñaMouseExited
+        jPasswordFieldContraseña.setBackground(Color.WHITE);
+    }//GEN-LAST:event_jPasswordFieldContraseñaMouseExited
   
     /**
      * @param args the command line arguments
@@ -207,7 +276,7 @@ public class IniSesEstu extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField jPasswordFieldContraseña;
+    private javax.swing.JTextField jTextFieldNumeroControl;
     // End of variables declaration//GEN-END:variables
 }

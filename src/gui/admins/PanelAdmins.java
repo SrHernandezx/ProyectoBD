@@ -1,23 +1,34 @@
-
 package gui.admins;
 
 import gui.inicio.Inicio;
 import gui.estudiantes.*;
 import gui.maestros.*;
+
 /**
  *
  * @author Juan
  */
 public class PanelAdmins extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PanelAdmins
-     */
+    private static PanelAdmins instancia = null;
+
     public PanelAdmins() {
         initComponents();
         this.setLocationRelativeTo(null);
         //this.setResizable(false);
-       
+
+    }
+
+    public static PanelAdmins getInstancia() {
+
+        synchronized (PanelAdmins.class) {
+
+            if (instancia == null) {
+
+                instancia = new PanelAdmins();
+            }
+        }
+        return instancia;
     }
 
     /**
@@ -145,7 +156,7 @@ public class PanelAdmins extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Windows".equals(info.getName())) {

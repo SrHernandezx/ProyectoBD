@@ -3,6 +3,7 @@ package gui.cursos;
 
 public class Curso extends javax.swing.JFrame {
 
+    private static Curso instancia = null;
     
     public Curso() {
         
@@ -12,7 +13,17 @@ public class Curso extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);        
     }
 
-    
+    public static Curso getInstancia() {
+
+        synchronized (Curso.class) {
+
+            if (instancia == null) {
+
+                instancia = new Curso();
+            }
+        }
+        return instancia;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

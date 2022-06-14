@@ -49,10 +49,10 @@ public class IniSesAdmins extends javax.swing.JFrame {
             
             if (info[1].equals(contra)) {
                 
-                JOptionPane.showMessageDialog(null, "Sistema: Bienvenido " + usuario, "AgendITA: Login", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Sistema: Bienvenido " + usuario, "ITA: Login", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
-                IniSesAdmins menu = IniSesAdmins.getInstancia();
-                menu.setVisible(true);
+                PanelAdmins panel = PanelAdmins.getInstancia();
+                panel.setVisible(true);
 
             } else {
                 
@@ -60,11 +60,11 @@ public class IniSesAdmins extends javax.swing.JFrame {
                 
                 if (intentos == 3) {
                     
-                    JOptionPane.showMessageDialog(null, "Número máximo de intentos excedido", "AgendITA: Login", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Número máximo de intentos excedido", "ITA: Login", JOptionPane.INFORMATION_MESSAGE);
                     System.exit(0);
 
                 }
-                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta", "AgendITA: Login", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta", "ITA: Login", JOptionPane.ERROR_MESSAGE);
                 borrarFormulario();
             }
 
@@ -72,7 +72,7 @@ public class IniSesAdmins extends javax.swing.JFrame {
             intentos++;
             
             if (intentos == 3) {
-                JOptionPane.showMessageDialog(null, "Número máximo de intentos excedido", "AgendITA: Login", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Número máximo de intentos excedido", "ITA: Login", JOptionPane.INFORMATION_MESSAGE);
                 System.exit(0);
             }
             JOptionPane.showMessageDialog(null, "Usuario No escontrado", "AgendITA: Login", JOptionPane.ERROR_MESSAGE);
@@ -84,11 +84,11 @@ public class IniSesAdmins extends javax.swing.JFrame {
                 intentos++;
                 
                 if (intentos == 3) {
-                    JOptionPane.showMessageDialog(null, "Número máximo de intentos excedido", "AgendITA: Login", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Número máximo de intentos excedido", "ITA: Login", JOptionPane.INFORMATION_MESSAGE);
                     System.exit(0);
 
                 }
-                JOptionPane.showMessageDialog(null, "Usuario No encontrado", "AgendITA: Login", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario No encontrado", "ITA: Login", JOptionPane.ERROR_MESSAGE);
                 borrarFormulario();
             }
         }
@@ -104,7 +104,7 @@ public class IniSesAdmins extends javax.swing.JFrame {
         jPasswordFieldAdministrador = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(105, 180, 255));
 
@@ -138,7 +138,6 @@ public class IniSesAdmins extends javax.swing.JFrame {
         });
 
         jPasswordFieldAdministrador.setBackground(new java.awt.Color(105, 180, 255));
-        jPasswordFieldAdministrador.setText("jPasswordField1");
         jPasswordFieldAdministrador.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Contraseña: ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
         jPasswordFieldAdministrador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
