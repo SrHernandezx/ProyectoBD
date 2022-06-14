@@ -1,5 +1,7 @@
 package gui.estudiantes;
 
+import gui.admins.PanelAdmins;
+
 
 public class Estudiantes extends javax.swing.JFrame {
 
@@ -22,9 +24,10 @@ public class Estudiantes extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jButtonModificar = new javax.swing.JButton();
+        jButtonEliminar = new javax.swing.JButton();
+        jButtonAltas = new javax.swing.JButton();
+        jButtonAtras = new javax.swing.JButton();
 
         jButton4.setText("jButton4");
 
@@ -57,14 +60,35 @@ public class Estudiantes extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/actualizar.png"))); // NOI18N
         jButton1.setToolTipText("Actualizar tablas.");
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cambios.png"))); // NOI18N
-        jButton2.setToolTipText("Cambiar.");
+        jButtonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cambios.png"))); // NOI18N
+        jButtonModificar.setToolTipText("Cambiar.");
+        jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/borrar.png"))); // NOI18N
-        jButton3.setToolTipText("Borrar.");
+        jButtonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/borrar.png"))); // NOI18N
+        jButtonEliminar.setToolTipText("Borrar.");
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/altas.png"))); // NOI18N
-        jButton5.setToolTipText("Añadir.");
+        jButtonAltas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/altas.png"))); // NOI18N
+        jButtonAltas.setToolTipText("Añadir.");
+        jButtonAltas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAltasActionPerformed(evt);
+            }
+        });
+
+        jButtonAtras.setBackground(new java.awt.Color(105, 180, 255));
+        jButtonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Atras.png"))); // NOI18N
+        jButtonAtras.setToolTipText("Atras.");
+        jButtonAtras.setAlignmentX(0.5F);
+        jButtonAtras.setBorder(null);
+        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAtrasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -72,32 +96,34 @@ public class Estudiantes extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 484, Short.MAX_VALUE)
-                        .addComponent(jButton5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 484, Short.MAX_VALUE)
+                .addComponent(jButtonAltas)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonEliminar)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonModificar)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
                 .addContainerGap())
+            .addComponent(jScrollPane1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jButtonAtras)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addComponent(jButtonAtras)
+                .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2)
-                        .addComponent(jButton3)
-                        .addComponent(jButton5)))
-                .addGap(18, 18, 18)
+                        .addComponent(jButtonModificar)
+                        .addComponent(jButtonEliminar)
+                        .addComponent(jButtonAltas)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -119,6 +145,25 @@ public class Estudiantes extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButtonAltasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAltasActionPerformed
+        Estudiantes_Altas estuAltas = new Estudiantes_Altas();
+        estuAltas.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonAltasActionPerformed
+
+    private void jButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarActionPerformed
+        Estudaintes_Cambios estuCambios = new Estudaintes_Cambios();
+        estuCambios.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonModificarActionPerformed
+
+    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
+
+        PanelAdmins pAdmins = new PanelAdmins();
+        pAdmins.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,10 +198,11 @@ public class Estudiantes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButtonAltas;
+    private javax.swing.JButton jButtonAtras;
+    private javax.swing.JButton jButtonEliminar;
+    private javax.swing.JButton jButtonModificar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

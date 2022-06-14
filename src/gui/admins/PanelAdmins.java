@@ -1,11 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package gui.principal;
+
+package gui.admins;
 
 import gui.inicio.Inicio;
-
+import gui.estudiantes.*;
+import gui.maestros.*;
 /**
  *
  * @author Juan
@@ -18,7 +16,8 @@ public class PanelAdmins extends javax.swing.JFrame {
     public PanelAdmins() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setResizable(false);
+        //this.setResizable(false);
+       
     }
 
     /**
@@ -31,9 +30,9 @@ public class PanelAdmins extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonAtras = new javax.swing.JButton();
+        jButtonEstudiante = new javax.swing.JButton();
+        jButtonMaestro = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -42,21 +41,31 @@ public class PanelAdmins extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(105, 180, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true), "Menú", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
-        jButton4.setBackground(new java.awt.Color(105, 180, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Atras.png"))); // NOI18N
-        jButton4.setToolTipText("Atras.");
-        jButton4.setBorder(null);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAtras.setBackground(new java.awt.Color(105, 180, 255));
+        jButtonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Atras.png"))); // NOI18N
+        jButtonAtras.setToolTipText("Atras.");
+        jButtonAtras.setBorder(null);
+        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButtonAtrasActionPerformed(evt);
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Estudiante.png"))); // NOI18N
-        jButton5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        jButtonEstudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Estudiante.png"))); // NOI18N
+        jButtonEstudiante.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        jButtonEstudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEstudianteActionPerformed(evt);
+            }
+        });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/teacher_man_user_avatar_school_icon_209287.png"))); // NOI18N
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        jButtonMaestro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/teacher_man_user_avatar_school_icon_209287.png"))); // NOI18N
+        jButtonMaestro.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        jButtonMaestro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMaestroActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/3700481-blackboard-board-chalk-class-educational-materials-school_108759.png"))); // NOI18N
         jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -70,31 +79,29 @@ public class PanelAdmins extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5)
+                        .addComponent(jButtonEstudiante)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(jButtonMaestro)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(0, 13, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonAtras)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton4)
+                .addComponent(jButtonAtras)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
-                    .addComponent(jButton1)
+                    .addComponent(jButtonEstudiante)
+                    .addComponent(jButtonMaestro)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -115,22 +122,30 @@ public class PanelAdmins extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
 
         Inicio inic = new Inicio();
         inic.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButtonAtrasActionPerformed
+
+    private void jButtonEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstudianteActionPerformed
+        Estudiantes estudiantes = new Estudiantes();
+        estudiantes.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonEstudianteActionPerformed
+
+    private void jButtonMaestroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMaestroActionPerformed
+        Maestros maestros = new Maestros();
+        maestros.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonMaestroActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Windows".equals(info.getName())) {
@@ -158,10 +173,10 @@ public class PanelAdmins extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButtonAtras;
+    private javax.swing.JButton jButtonEstudiante;
+    private javax.swing.JButton jButtonMaestro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

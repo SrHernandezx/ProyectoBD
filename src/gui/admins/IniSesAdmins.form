@@ -52,12 +52,12 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="197" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAdministrador" min="-2" pref="197" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jPasswordField1" alignment="1" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="jPasswordFieldAdministrador" alignment="1" min="-2" pref="197" max="-2" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
@@ -84,9 +84,9 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="jTextFieldAdministrador" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                          <Component id="jPasswordField1" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="jPasswordFieldAdministrador" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -122,7 +122,7 @@
             <Property name="text" type="java.lang.String" value="iconoita"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="jTextFieldAdministrador">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="b4" red="69" type="rgb"/>
@@ -139,12 +139,12 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextField1MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextField1MouseExited"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextFieldAdministradorMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextFieldAdministradorMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAdministradorActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+        <Component class="javax.swing.JPasswordField" name="jPasswordFieldAdministrador">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="b4" red="69" type="rgb"/>
@@ -162,8 +162,9 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPasswordField1MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPasswordField1MouseExited"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPasswordFieldAdministradorMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPasswordFieldAdministradorMouseExited"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jPasswordFieldAdministradorKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
